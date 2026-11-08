@@ -1,0 +1,13 @@
+# Endereços antigos do Wix que não existem mais no site novo (301 = mudança definitiva,
+# o Google transfere a relevância e quem tiver o link salvo não cai em erro).
+/book-online                               /contato                 301
+/book-online/*                             /contato                 301
+/service-page/assessoria-trabalhista       /direito-trabalhista     301
+/service-page/*                            /areas-de-atuacao        301
+/blog                                      /                        301
+/blog/*                                    /                        301
+/post/*                                    /areas-de-atuacao        301
+/pages-sitemap.xml                         /sitemap.xml             301
+/blog-posts-sitemap.xml                    /sitemap.xml             301
+/blog-categories-sitemap.xml               /sitemap.xml             301
+/booking-services-sitemap.xml              /sitemap.xml             301

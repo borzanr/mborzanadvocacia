@@ -1,0 +1,11 @@
+# Cabeçalhos de segurança para todas as páginas (Cloudflare Pages)
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
+# Imagens, CSS e JS: cache de 7 dias (CSS e JS já mudam de endereço a cada versão)
+/assets/*
+  Cache-Control: public, max-age=604800

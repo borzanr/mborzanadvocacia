@@ -1,0 +1,38 @@
+# wix integration
+.wix/
+
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.local
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# estado local do servidor de teste
+.wrangler/
+
+# cópias geradas por tools/wix_sync.py a partir de tools/build.py
+public/assets/
+public/robots.txt
+public/sitemap.xml
+public/mapa-do-site.xml
+src/site/

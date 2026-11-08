@@ -23,7 +23,8 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
-OUT = ROOT / "docs"
+OUT = ROOT / "docs"                 # prévia (GitHub Pages)
+OUT_PROD = ROOT / "site-publicar"   # versão oficial: pasta para subir no Cloudflare Pages
 esc = html.escape
 
 SITE = {
@@ -44,6 +45,7 @@ SITE = {
     "instagram": "https://www.instagram.com/mborzan.adv/",
     "instagram_voos": "https://www.instagram.com/direitodopassageiro.brasil/",
     "prod_url": "https://www.mborzanadvocacia.com.br",
+    "google_verification": "j4Bi43ccZvIJCevMyiePrxj2AOc7kZDHc4FwwRA0tyA",  # Search Console (público, não é segredo)
     "preview_url": "https://mborzanadvocacia.borzanti.com",
 }
 
@@ -208,6 +210,7 @@ class Build:
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 {robots}<link rel="canonical" href="{url}">
+<meta name="google-site-verification" content="{SITE['google_verification']}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="{SITE['name']}">
@@ -237,6 +240,9 @@ class Build:
 """
 
     def run(self) -> None:
+        global OUT
+        if self.prod:
+            OUT = OUT_PROD
         if OUT.exists():
             for p in OUT.iterdir():
                 if p.name in ("CNAME", ".nojekyll"):
@@ -261,7 +267,10 @@ class Build:
               + "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n")
         if self.prod:
             write(OUT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {self.base}/sitemap.xml\n")
-            write(OUT / "CNAME", "www.mborzanadvocacia.com.br\n")
+            for f in ("_headers", "_redirects"):   # regras do Cloudflare Pages: segurança, cache e endereços antigos do Wix
+                shutil.copy(SRC / "publicar" / f, OUT / f)
+            print(f"{len(urls)} páginas em {OUT} (produção, Cloudflare Pages)")
+            return
         else:
             write(OUT / "robots.txt", "# PRÉVIA: bloqueia indexação. Na versão oficial o build gera Allow + Sitemap.\nUser-agent: *\nDisallow: /\n")
             write(OUT / "CNAME", SITE["preview_url"].split("//")[1] + "\n")
