@@ -1,0 +1,6 @@
+_orig/
+_gen/
+__pycache__/
+.env*
+relatorio-site-mauro-borzan.html
+.claude/

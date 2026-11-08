@@ -1,0 +1,42 @@
+---
+slug: contato
+title: Contato – Mauro Borzan Advocacia, Cotia (Raposo Tavares km 22,8)
+description: Fale com o advogado Mauro Borzan pelo WhatsApp (11) 91707-8365, telefone ou e-mail. Escritório na Rodovia Raposo Tavares, 22850, Sala 315, Cotia. Atendimento online em todo o Brasil.
+---
+<section class="page-head on-dark">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Início</a> · Contato</div>
+    <h1>Fale comigo</h1>
+    <p class="lead">A forma mais rápida é o WhatsApp. Respondo pessoalmente, em horário comercial.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap contact">
+    <div class="info">
+      <div><span class="k">WhatsApp</span><a href="{{wa:Olá, Dr. Mauro! Gostaria de falar sobre o meu caso.}}" target="_blank" rel="noopener">{{phone}}</a></div>
+      <div><span class="k">Telefone</span><a href="{{tel}}">{{phone}}</a></div>
+      <div><span class="k">E-mail</span><a href="mailto:{{email}}">{{email}}</a></div>
+      <div><span class="k">Horário</span><span>{{hours}}</span></div>
+      <div><span class="k">Endereço</span><span>{{street}}<br>{{district}}, {{city}} – {{state}}, CEP {{cep}}</span><a href="{{maps}}" target="_blank" rel="noopener" style="margin-top:6px">Abrir no Google Maps</a></div>
+      <div><span class="k">Online</span><span>Atendimento por WhatsApp, e-mail e videochamada para todo o Brasil.</span></div>
+    </div>
+    <form class="card" id="form-contato" data-phone="{{phone_e164}}">
+      <h2 style="font-size:24px">Envie um resumo do seu caso</h2>
+      <p class="form-note">Ao enviar, o WhatsApp abre com a mensagem pronta. Nada fica gravado neste site.</p>
+      <div class="field"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="name" required></div>
+      <div class="field"><label for="area">Assunto</label>
+        <select id="area" name="area" required>
+          <option value="">Escolha uma área</option>
+          <option>Voo atrasado, cancelado ou bagagem</option>
+          <option>Direito do consumidor</option>
+          <option>Trabalhista</option>
+          <option>Previdenciário (INSS)</option>
+          <option>Família</option>
+          <option>Outro assunto</option>
+        </select></div>
+      <div class="field"><label for="cidade">Cidade (opcional)</label><input id="cidade" name="cidade" autocomplete="address-level2"></div>
+      <div class="field"><label for="mensagem">O que aconteceu?</label><textarea id="mensagem" name="mensagem" required placeholder="Conte em poucas palavras. Ex.: meu voo de 10/10 foi cancelado e só fui reacomodado no dia seguinte."></textarea></div>
+      <button class="btn btn-gold" type="submit">{{icon:wa}}Enviar pelo WhatsApp</button>
+    </form>
+  </div>
+</section>
