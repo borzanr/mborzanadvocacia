@@ -203,5 +203,22 @@ form.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);pa
   body{padding-bottom:84px}
 }
 
+/* Efeitos discretos — todos desligados para quem pede menos movimento */
+.top{transition:box-shadow .25s,border-color .25s}
+.scrolled .top{box-shadow:0 6px 18px rgba(10,25,47,.10);border-bottom-color:transparent}
+.area img{transition:transform .5s ease}
+.area:hover img{transform:scale(1.04)}
+.area .more{display:inline-block;transition:transform .2s}
+.area:hover .more{transform:translateX(4px)}
+/* Entrada das seções: só esconde quando o JS já marcou a página; sem JS tudo fica visível */
+.reveal-ready .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal-ready .reveal.in{opacity:1;transform:none}
+@keyframes pulso{0%{box-shadow:0 6px 20px rgba(10,25,47,.3),0 0 0 0 rgba(181,148,16,.55)}100%{box-shadow:0 6px 20px rgba(10,25,47,.3),0 0 0 18px rgba(181,148,16,0)}}
+.show-float .float-wa.pulse{animation:pulso 1.2s ease-out 2}
+@media (prefers-reduced-motion:reduce){
+  .reveal-ready .reveal{opacity:1;transform:none}
+  .area:hover img,.area:hover .more{transform:none}
+}
+
 /* Faixa de prévia */
 .preview-bar{background:#fff7d6;color:#5a4700;font-size:13px;text-align:center;padding:6px 12px}
