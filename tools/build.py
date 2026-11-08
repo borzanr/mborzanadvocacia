@@ -34,13 +34,15 @@ SITE = {
     "phone": "(11) 91707-8365",
     "email": "mborzan.adv@gmail.com",
     "street": "Rodovia Raposo Tavares, 22850, Sala 315",
-    "district": "Lageadinho",
+    "district": "Granja Viana",
     "city": "Cotia",
     "state": "SP",
     "cep": "06709-015",
     "hours": "Segunda a sexta, das 9h às 18h",
     "maps": "https://www.google.com/maps/search/?api=1&query=Rodovia+Raposo+Tavares+22850+Cotia+SP",
     "facebook": "https://web.facebook.com/profile.php?id=61560640445558",
+    "instagram": "https://www.instagram.com/mborzan.adv/",
+    "instagram_voos": "https://www.instagram.com/direitodopassageiro.brasil/",
     "prod_url": "https://www.mborzanadvocacia.com.br",
     "preview_url": "https://mborzanadvocacia.borzanti.com",
 }
@@ -145,7 +147,7 @@ class Build:
                 "identifier": SITE["oab"],
                 "image": self.base + "/assets/img/mauro-borzan.webp",
             },
-            "sameAs": [SITE["facebook"]],
+            "sameAs": [SITE["facebook"], SITE["instagram"], SITE["instagram_voos"]],
         }
         return json.dumps(org, ensure_ascii=False)
 
@@ -179,6 +181,10 @@ class Build:
   <div><h3>Endereço</h3><ul>
     <li>{s['street']}<br>{s['district']}, {s['city']} – {s['state']}, CEP {s['cep']}</li>
     <li><a href="{esc(s['maps'])}" target="_blank" rel="noopener">Abrir no Google Maps</a></li>
+  </ul></div>
+  <div><h3>Redes</h3><ul>
+    <li><a href="{esc(s['instagram'])}" target="_blank" rel="noopener">Instagram @mborzan.adv</a></li>
+    <li><a href="{esc(s['instagram_voos'])}" target="_blank" rel="noopener">Instagram @direitodopassageiro.brasil</a></li>
     <li><a href="{esc(s['facebook'])}" target="_blank" rel="noopener">Facebook</a></li>
   </ul></div>
 </div>

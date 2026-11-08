@@ -161,6 +161,7 @@ p{margin:0}
 .faq summary::after{content:"";position:absolute;right:22px;top:50%;width:10px;height:10px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
 .faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
 .faq details>div{padding:0 20px 20px;color:#2c3a4f}
+.faq details>div p{margin:0 0 10px}.faq details>div p:last-child{margin:0}
 
 /* Faixa de chamada */
 .cta-band{background:var(--navy);color:#fff;border-radius:var(--r);padding:clamp(28px,5vw,48px);display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between}
@@ -185,7 +186,7 @@ form.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);pa
 /* Rodapé */
 .foot{background:var(--navy-2);color:#b7c2d4;font-size:15px}
 .foot .wrap{padding-block:56px 28px;display:grid;gap:36px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
 .foot h3{color:#fff;font-size:15px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
 .foot a{color:#e4e9f1}
 .foot ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
